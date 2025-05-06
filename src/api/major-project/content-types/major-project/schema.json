@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "major_projects",
+  "info": {
+    "singularName": "major-project",
+    "pluralName": "major-projects",
+    "displayName": "major_project"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "data": {
+      "displayName": "project_data",
+      "type": "component",
+      "repeatable": true,
+      "component": "project-data.project-data"
+    }
+  }
+}

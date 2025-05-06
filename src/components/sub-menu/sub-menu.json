@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sub_menu_sub_menus",
+  "info": {
+    "displayName": "sub_menu"
+  },
+  "options": {},
+  "attributes": {
+    "sub_menu_name": {
+      "type": "string"
+    },
+    "sub_menu_link": {
+      "type": "string"
+    }
+  }
+}

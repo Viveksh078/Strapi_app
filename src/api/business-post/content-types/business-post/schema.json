@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "business_posts",
+  "info": {
+    "singularName": "business-post",
+    "pluralName": "business-posts",
+    "displayName": "business_post"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "data": {
+      "displayName": "data",
+      "type": "component",
+      "repeatable": true,
+      "component": "data-business.data"
+    }
+  }
+}

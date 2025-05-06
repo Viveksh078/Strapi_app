@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_project_data_project_data",
+  "info": {
+    "displayName": "project_data"
+  },
+  "options": {},
+  "attributes": {
+    "img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "heading": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
