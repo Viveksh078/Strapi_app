@@ -444,7 +444,7 @@ export interface ApiMajorProjectMajorProject
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    data: Schema.Attribute.Component<'project-data.project-data', true>;
+    data: Schema.Attribute.Component<'data-project.data', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

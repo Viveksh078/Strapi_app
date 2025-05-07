@@ -14,10 +14,10 @@
       "type": "string"
     },
     "data": {
-      "displayName": "project_data",
+      "displayName": "data",
       "type": "component",
       "repeatable": true,
-      "component": "project-data.project-data"
+      "component": "data-project.data"
     }
   }
 }
