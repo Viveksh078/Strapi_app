@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_data_presence_data_presences",
+  "info": {
+    "displayName": "data_presence"
+  },
+  "options": {},
+  "attributes": {
+    "region": {
+      "type": "string"
+    },
+    "companies": {
+      "displayName": "companies",
+      "type": "component",
+      "repeatable": true,
+      "component": "companies.companies"
+    }
+  }
+}

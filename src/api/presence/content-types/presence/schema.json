@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "presences",
+  "info": {
+    "singularName": "presence",
+    "pluralName": "presences",
+    "displayName": "presence",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "headquarters": {
+      "type": "text"
+    },
+    "group_companies": {
+      "type": "component",
+      "repeatable": true,
+      "component": "group-companies.group-companies"
+    }
+  }
+}

@@ -369,6 +369,42 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAboutUsPageAboutUsPage extends Struct.SingleTypeSchema {
+  collectionName: 'about_us_pages';
+  info: {
+    displayName: 'about_us_page';
+    pluralName: 'about-us-pages';
+    singularName: 'about-us-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    about_us_content: Schema.Attribute.DynamicZone<
+      [
+        'about-us.message',
+        'about-us.history',
+        'about-us.coorporate-philosophy',
+        'about-us.awards',
+        'about-us.awards-list',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::about-us-page.about-us-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBusinessPostBusinessPost
   extends Struct.CollectionTypeSchema {
   collectionName: 'business_posts';
@@ -456,6 +492,41 @@ export interface ApiMajorProjectMajorProject
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     url: Schema.Attribute.String;
+  };
+}
+
+export interface ApiPresencePresence extends Struct.CollectionTypeSchema {
+  collectionName: 'presences';
+  info: {
+    description: '';
+    displayName: 'presence';
+    pluralName: 'presences';
+    singularName: 'presence';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    group_companies: Schema.Attribute.Component<
+      'group-companies.group-companies',
+      true
+    >;
+    headquarters: Schema.Attribute.Text;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::presence.presence'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -968,9 +1039,11 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::business-post.business-post': ApiBusinessPostBusinessPost;
       'api::header.header': ApiHeaderHeader;
       'api::major-project.major-project': ApiMajorProjectMajorProject;
+      'api::presence.presence': ApiPresencePresence;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

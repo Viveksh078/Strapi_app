@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_about_us_histories",
+  "info": {
+    "displayName": "history",
+    "icon": "bold"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

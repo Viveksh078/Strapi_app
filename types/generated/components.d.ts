@@ -1,5 +1,101 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface AboutUsAwards extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_awards';
+  info: {
+    description: '';
+    displayName: 'awards';
+    icon: 'star';
+  };
+  attributes: {
+    awards: Schema.Attribute.Component<'about-us.awards-list', true>;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface AboutUsAwardsList extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_awards_lists';
+  info: {
+    description: '';
+    displayName: 'awards_list';
+    icon: 'bulletList';
+  };
+  attributes: {
+    client: Schema.Attribute.String;
+    date: Schema.Attribute.Date;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    project: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    year: Schema.Attribute.String;
+  };
+}
+
+export interface AboutUsCoorporateList extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_coorporate_lists';
+  info: {
+    description: '';
+    displayName: 'coorporate_list';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface AboutUsCoorporatePhilosophy extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_coorporate_philosophies';
+  info: {
+    description: '';
+    displayName: 'coorporate_philosophy';
+  };
+  attributes: {
+    coorporate_list: Schema.Attribute.Component<
+      'about-us.coorporate-list',
+      true
+    >;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface AboutUsHistory extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_histories';
+  info: {
+    displayName: 'history';
+    icon: 'bold';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface AboutUsMessage extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_messages';
+  info: {
+    displayName: 'message';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    images: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    sub_title: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface CompaniesCompanies extends Struct.ComponentSchema {
+  collectionName: 'components_companies_companies';
+  info: {
+    description: '';
+    displayName: 'companies';
+  };
+  attributes: {
+    name: Schema.Attribute.Text;
+  };
+}
+
 export interface DataBusinessData extends Struct.ComponentSchema {
   collectionName: 'components_data_business_data';
   info: {
@@ -10,6 +106,17 @@ export interface DataBusinessData extends Struct.ComponentSchema {
     heading: Schema.Attribute.String;
     img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     url: Schema.Attribute.String;
+  };
+}
+
+export interface DataPresenceDataPresence extends Struct.ComponentSchema {
+  collectionName: 'components_data_presence_data_presences';
+  info: {
+    displayName: 'data_presence';
+  };
+  attributes: {
+    companies: Schema.Attribute.Component<'companies.companies', true>;
+    region: Schema.Attribute.String;
   };
 }
 
@@ -37,6 +144,17 @@ export interface DataData extends Struct.ComponentSchema {
   };
 }
 
+export interface GroupCompaniesGroupCompanies extends Struct.ComponentSchema {
+  collectionName: 'components_group_companies_group_companies';
+  info: {
+    displayName: 'group_companies';
+  };
+  attributes: {
+    data: Schema.Attribute.Component<'data-presence.data-presence', true>;
+    heading: Schema.Attribute.String;
+  };
+}
+
 export interface SubMenuSubMenu extends Struct.ComponentSchema {
   collectionName: 'components_sub_menu_sub_menus';
   info: {
@@ -51,9 +169,18 @@ export interface SubMenuSubMenu extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'about-us.awards': AboutUsAwards;
+      'about-us.awards-list': AboutUsAwardsList;
+      'about-us.coorporate-list': AboutUsCoorporateList;
+      'about-us.coorporate-philosophy': AboutUsCoorporatePhilosophy;
+      'about-us.history': AboutUsHistory;
+      'about-us.message': AboutUsMessage;
+      'companies.companies': CompaniesCompanies;
       'data-business.data': DataBusinessData;
+      'data-presence.data-presence': DataPresenceDataPresence;
       'data-project.data': DataProjectData;
       'data.data': DataData;
+      'group-companies.group-companies': GroupCompaniesGroupCompanies;
       'sub-menu.sub-menu': SubMenuSubMenu;
     }
   }

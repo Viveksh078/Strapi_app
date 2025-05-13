@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_companies_companies",
+  "info": {
+    "displayName": "companies",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "text"
+    }
+  }
+}

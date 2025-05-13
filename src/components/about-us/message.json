@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_about_us_messages",
+  "info": {
+    "displayName": "message"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "sub_title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

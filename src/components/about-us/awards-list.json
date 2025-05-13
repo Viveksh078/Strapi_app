@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_about_us_awards_lists",
+  "info": {
+    "displayName": "awards_list",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "client": {
+      "type": "string"
+    },
+    "project": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "year": {
+      "type": "string"
+    }
+  }
+}

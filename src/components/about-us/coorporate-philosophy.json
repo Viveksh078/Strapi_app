@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_about_us_coorporate_philosophies",
+  "info": {
+    "displayName": "coorporate_philosophy",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "coorporate_list": {
+      "displayName": "coorporate_list",
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us.coorporate-list"
+    },
+    "heading": {
+      "type": "string"
+    }
+  }
+}

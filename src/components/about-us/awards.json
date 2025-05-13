@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_about_us_awards",
+  "info": {
+    "displayName": "awards",
+    "icon": "star",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "awards": {
+      "displayName": "awards_list",
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us.awards-list"
+    }
+  }
+}
