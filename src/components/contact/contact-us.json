@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_contact_contact_uses",
+  "info": {
+    "displayName": "inquiry",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone_no": {
+      "type": "biginteger"
+    },
+    "message": {
+      "type": "text"
+    }
+  }
+}

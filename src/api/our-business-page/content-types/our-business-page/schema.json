@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "our_business_pages",
+  "info": {
+    "singularName": "our-business-page",
+    "pluralName": "our-business-pages",
+    "displayName": "our_business_page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "our_business": {
+      "type": "dynamiczone",
+      "components": [
+        "our-business.services",
+        "our-business.service-card",
+        "our-business.business-post"
+      ]
+    }
+  }
+}

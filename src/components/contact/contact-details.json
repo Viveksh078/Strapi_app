@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_contact_contact_details",
+  "info": {
+    "displayName": "contact_details"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "company_name": {
+      "type": "string"
+    },
+    "phone_no": {
+      "type": "biginteger"
+    },
+    "email": {
+      "type": "email"
+    },
+    "address": {
+      "type": "text"
+    }
+  }
+}

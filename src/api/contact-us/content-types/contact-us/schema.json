@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_uses",
+  "info": {
+    "singularName": "contact-us",
+    "pluralName": "contact-uses",
+    "displayName": "contact_us"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "contact_us": {
+      "type": "dynamiczone",
+      "components": [
+        "contact.contact",
+        "contact.contact-us",
+        "contact.contact-details"
+      ]
+    }
+  }
+}

@@ -96,6 +96,50 @@ export interface CompaniesCompanies extends Struct.ComponentSchema {
   };
 }
 
+export interface ContactContact extends Struct.ComponentSchema {
+  collectionName: 'components_contact_contacts';
+  info: {
+    displayName: 'contact';
+  };
+  attributes: {
+    contact_details: Schema.Attribute.Component<
+      'contact.contact-details',
+      true
+    >;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface ContactContactDetails extends Struct.ComponentSchema {
+  collectionName: 'components_contact_contact_details';
+  info: {
+    displayName: 'contact_details';
+  };
+  attributes: {
+    address: Schema.Attribute.Text;
+    company_name: Schema.Attribute.String;
+    email: Schema.Attribute.Email;
+    phone_no: Schema.Attribute.BigInteger;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ContactContactUs extends Struct.ComponentSchema {
+  collectionName: 'components_contact_contact_uses';
+  info: {
+    description: '';
+    displayName: 'inquiry';
+  };
+  attributes: {
+    email: Schema.Attribute.Email;
+    heading: Schema.Attribute.String;
+    message: Schema.Attribute.Text;
+    name: Schema.Attribute.String;
+    phone_no: Schema.Attribute.BigInteger;
+    subject: Schema.Attribute.String;
+  };
+}
+
 export interface DataBusinessData extends Struct.ComponentSchema {
   collectionName: 'components_data_business_data';
   info: {
@@ -155,6 +199,43 @@ export interface GroupCompaniesGroupCompanies extends Struct.ComponentSchema {
   };
 }
 
+export interface OurBusinessBusinessPost extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_business_posts';
+  info: {
+    displayName: 'business_post';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+  };
+}
+
+export interface OurBusinessServiceCard extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_service_cards';
+  info: {
+    displayName: 'service_card';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface OurBusinessServices extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_services';
+  info: {
+    displayName: 'services';
+    icon: 'bulletList';
+  };
+  attributes: {
+    service_card: Schema.Attribute.Component<'our-business.service-card', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SubMenuSubMenu extends Struct.ComponentSchema {
   collectionName: 'components_sub_menu_sub_menus';
   info: {
@@ -176,11 +257,17 @@ declare module '@strapi/strapi' {
       'about-us.history': AboutUsHistory;
       'about-us.message': AboutUsMessage;
       'companies.companies': CompaniesCompanies;
+      'contact.contact': ContactContact;
+      'contact.contact-details': ContactContactDetails;
+      'contact.contact-us': ContactContactUs;
       'data-business.data': DataBusinessData;
       'data-presence.data-presence': DataPresenceDataPresence;
       'data-project.data': DataProjectData;
       'data.data': DataData;
       'group-companies.group-companies': GroupCompaniesGroupCompanies;
+      'our-business.business-post': OurBusinessBusinessPost;
+      'our-business.service-card': OurBusinessServiceCard;
+      'our-business.services': OurBusinessServices;
       'sub-menu.sub-menu': SubMenuSubMenu;
     }
   }

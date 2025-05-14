@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_our_business_service_cards",
+  "info": {
+    "displayName": "service_card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_our_business_business_posts",
+  "info": {
+    "displayName": "business_post"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
