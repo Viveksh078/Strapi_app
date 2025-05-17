@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiAboutUsPageAboutUsPage extends Struct.SingleTypeSchema {
   collectionName: 'about_us_pages';
   info: {
+    description: '';
     displayName: 'about_us_page';
     pluralName: 'about-us-pages';
     singularName: 'about-us-page';
@@ -381,13 +382,7 @@ export interface ApiAboutUsPageAboutUsPage extends Struct.SingleTypeSchema {
   };
   attributes: {
     about_us_content: Schema.Attribute.DynamicZone<
-      [
-        'about-us.message',
-        'about-us.history',
-        'about-us.coorporate-philosophy',
-        'about-us.awards',
-        'about-us.awards-list',
-      ]
+      ['about-us.message', 'about-us.coorporate-philosophy']
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -456,6 +451,42 @@ export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::contact-us.contact-us'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiFooterFooter extends Struct.SingleTypeSchema {
+  collectionName: 'footers';
+  info: {
+    description: '';
+    displayName: 'footer';
+    pluralName: 'footers';
+    singularName: 'footer';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    footer: Schema.Attribute.DynamicZone<
+      [
+        'footer.headquarter',
+        'group-companies.group-companies',
+        'footer.contact',
+        'footer.social-links',
+      ]
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footer.footer'
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
@@ -1107,6 +1138,7 @@ declare module '@strapi/strapi' {
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::business-post.business-post': ApiBusinessPostBusinessPost;
       'api::contact-us.contact-us': ApiContactUsContactUs;
+      'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::major-project.major-project': ApiMajorProjectMajorProject;
       'api::our-business-page.our-business-page': ApiOurBusinessPageOurBusinessPage;

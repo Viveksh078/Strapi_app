@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "footer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "footer": {
+      "type": "dynamiczone",
+      "components": [
+        "footer.headquarter",
+        "group-companies.group-companies",
+        "footer.contact",
+        "footer.social-links"
+      ]
+    }
+  }
+}

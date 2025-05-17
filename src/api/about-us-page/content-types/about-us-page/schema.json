@@ -4,7 +4,8 @@
   "info": {
     "singularName": "about-us-page",
     "pluralName": "about-us-pages",
-    "displayName": "about_us_page"
+    "displayName": "about_us_page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,10 +15,7 @@
       "type": "dynamiczone",
       "components": [
         "about-us.message",
-        "about-us.history",
-        "about-us.coorporate-philosophy",
-        "about-us.awards",
-        "about-us.awards-list"
+        "about-us.coorporate-philosophy"
       ]
     }
   }

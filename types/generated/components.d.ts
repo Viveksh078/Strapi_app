@@ -188,6 +188,55 @@ export interface DataData extends Struct.ComponentSchema {
   };
 }
 
+export interface FooterContact extends Struct.ComponentSchema {
+  collectionName: 'components_footer_contacts';
+  info: {
+    displayName: 'contact';
+  };
+  attributes: {
+    dresciption: Schema.Attribute.Text;
+    email: Schema.Attribute.Email;
+    heading: Schema.Attribute.String;
+    mobile: Schema.Attribute.BigInteger;
+    title: Schema.Attribute.String;
+    title_email: Schema.Attribute.String;
+  };
+}
+
+export interface FooterHeadquarter extends Struct.ComponentSchema {
+  collectionName: 'components_footer_headquarters';
+  info: {
+    description: '';
+    displayName: 'headquarter';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface FooterSocial extends Struct.ComponentSchema {
+  collectionName: 'components_footer_socials';
+  info: {
+    displayName: 'social';
+  };
+  attributes: {
+    social_links: Schema.Attribute.Component<'footer.social-links', true>;
+  };
+}
+
+export interface FooterSocialLinks extends Struct.ComponentSchema {
+  collectionName: 'components_footer_social_links';
+  info: {
+    displayName: 'social_links';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    url: Schema.Attribute.String;
+  };
+}
+
 export interface GroupCompaniesGroupCompanies extends Struct.ComponentSchema {
   collectionName: 'components_group_companies_group_companies';
   info: {
@@ -264,6 +313,10 @@ declare module '@strapi/strapi' {
       'data-presence.data-presence': DataPresenceDataPresence;
       'data-project.data': DataProjectData;
       'data.data': DataData;
+      'footer.contact': FooterContact;
+      'footer.headquarter': FooterHeadquarter;
+      'footer.social': FooterSocial;
+      'footer.social-links': FooterSocialLinks;
       'group-companies.group-companies': GroupCompaniesGroupCompanies;
       'our-business.business-post': OurBusinessBusinessPost;
       'our-business.service-card': OurBusinessServiceCard;
