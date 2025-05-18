@@ -1,22 +1,16 @@
 {
   "collectionName": "components_footer_social_links",
   "info": {
-    "displayName": "social_links"
+    "displayName": "social_links",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "url": {
-      "type": "string"
-    },
-    "icon": {
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "type": "media",
-      "multiple": false
+    "social_network": {
+      "displayName": "social_network",
+      "type": "component",
+      "repeatable": true,
+      "component": "footer.social-network"
     }
   }
 }

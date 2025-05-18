@@ -229,7 +229,18 @@ export interface FooterSocial extends Struct.ComponentSchema {
 export interface FooterSocialLinks extends Struct.ComponentSchema {
   collectionName: 'components_footer_social_links';
   info: {
+    description: '';
     displayName: 'social_links';
+  };
+  attributes: {
+    social_network: Schema.Attribute.Component<'footer.social-network', true>;
+  };
+}
+
+export interface FooterSocialNetwork extends Struct.ComponentSchema {
+  collectionName: 'components_footer_social_networks';
+  info: {
+    displayName: 'social_network';
   };
   attributes: {
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
@@ -317,6 +328,7 @@ declare module '@strapi/strapi' {
       'footer.headquarter': FooterHeadquarter;
       'footer.social': FooterSocial;
       'footer.social-links': FooterSocialLinks;
+      'footer.social-network': FooterSocialNetwork;
       'group-companies.group-companies': GroupCompaniesGroupCompanies;
       'our-business.business-post': OurBusinessBusinessPost;
       'our-business.service-card': OurBusinessServiceCard;

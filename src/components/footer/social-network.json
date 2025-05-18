@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_footer_social_networks",
+  "info": {
+    "displayName": "social_network"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}
