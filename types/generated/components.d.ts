@@ -191,10 +191,11 @@ export interface DataData extends Struct.ComponentSchema {
 export interface FooterContact extends Struct.ComponentSchema {
   collectionName: 'components_footer_contacts';
   info: {
+    description: '';
     displayName: 'contact';
   };
   attributes: {
-    dresciption: Schema.Attribute.Text;
+    description: Schema.Attribute.Text;
     email: Schema.Attribute.Email;
     heading: Schema.Attribute.String;
     mobile: Schema.Attribute.BigInteger;
