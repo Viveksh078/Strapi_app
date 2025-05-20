@@ -6,14 +6,11 @@
   },
   "options": {},
   "attributes": {
-    "coorporate_list": {
-      "displayName": "coorporate_list",
+    "coorporate_section": {
+      "displayName": "coorporate_section",
       "type": "component",
       "repeatable": true,
-      "component": "about-us.coorporate-list"
-    },
-    "heading": {
-      "type": "string"
+      "component": "about-us.coorporate-section"
     }
   }
 }

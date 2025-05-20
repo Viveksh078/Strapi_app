@@ -50,6 +50,19 @@ export interface AboutUsCoorporatePhilosophy extends Struct.ComponentSchema {
     displayName: 'coorporate_philosophy';
   };
   attributes: {
+    coorporate_section: Schema.Attribute.Component<
+      'about-us.coorporate-section',
+      true
+    >;
+  };
+}
+
+export interface AboutUsCoorporateSection extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_coorporate_sections';
+  info: {
+    displayName: 'coorporate_section';
+  };
+  attributes: {
     coorporate_list: Schema.Attribute.Component<
       'about-us.coorporate-list',
       true
@@ -180,10 +193,12 @@ export interface DataProjectData extends Struct.ComponentSchema {
 export interface DataData extends Struct.ComponentSchema {
   collectionName: 'components_data_data';
   info: {
+    description: '';
     displayName: 'data';
   };
   attributes: {
     menu_name: Schema.Attribute.String;
+    menu_url: Schema.Attribute.String;
     sub_menu: Schema.Attribute.Component<'sub-menu.sub-menu', true>;
   };
 }
@@ -260,6 +275,81 @@ export interface GroupCompaniesGroupCompanies extends Struct.ComponentSchema {
   };
 }
 
+export interface HomeBanner extends Struct.ComponentSchema {
+  collectionName: 'components_home_banners';
+  info: {
+    displayName: 'banner';
+  };
+  attributes: {
+    button: Schema.Attribute.String;
+    circle: Schema.Attribute.Component<'home.circle-tab', true>;
+    description: Schema.Attribute.Text;
+    header: Schema.Attribute.String;
+  };
+}
+
+export interface HomeBusiness extends Struct.ComponentSchema {
+  collectionName: 'components_home_businesses';
+  info: {
+    displayName: 'business';
+  };
+  attributes: {
+    card: Schema.Attribute.Component<'home.card-tab', true>;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface HomeCardTab extends Struct.ComponentSchema {
+  collectionName: 'components_home_card_tabs';
+  info: {
+    displayName: 'card_tab';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    read_more_url: Schema.Attribute.Component<'home.read-url', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomeCircleTab extends Struct.ComponentSchema {
+  collectionName: 'components_home_circle_tabs';
+  info: {
+    displayName: 'circle_tab';
+    icon: 'chartPie';
+  };
+  attributes: {
+    data: Schema.Attribute.String;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomeReadUrl extends Struct.ComponentSchema {
+  collectionName: 'components_home_read_urls';
+  info: {
+    displayName: 'read_url';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface HomeSustainability extends Struct.ComponentSchema {
+  collectionName: 'components_home_sustainabilities';
+  info: {
+    displayName: 'sustainability';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Read_url: Schema.Attribute.Component<'home.read-url', false>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface OurBusinessBusinessPost extends Struct.ComponentSchema {
   collectionName: 'components_our_business_business_posts';
   info: {
@@ -315,6 +405,7 @@ declare module '@strapi/strapi' {
       'about-us.awards-list': AboutUsAwardsList;
       'about-us.coorporate-list': AboutUsCoorporateList;
       'about-us.coorporate-philosophy': AboutUsCoorporatePhilosophy;
+      'about-us.coorporate-section': AboutUsCoorporateSection;
       'about-us.history': AboutUsHistory;
       'about-us.message': AboutUsMessage;
       'companies.companies': CompaniesCompanies;
@@ -331,6 +422,12 @@ declare module '@strapi/strapi' {
       'footer.social-links': FooterSocialLinks;
       'footer.social-network': FooterSocialNetwork;
       'group-companies.group-companies': GroupCompaniesGroupCompanies;
+      'home.banner': HomeBanner;
+      'home.business': HomeBusiness;
+      'home.card-tab': HomeCardTab;
+      'home.circle-tab': HomeCircleTab;
+      'home.read-url': HomeReadUrl;
+      'home.sustainability': HomeSustainability;
       'our-business.business-post': OurBusinessBusinessPost;
       'our-business.service-card': OurBusinessServiceCard;
       'our-business.services': OurBusinessServices;

@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_home_banners",
+  "info": {
+    "displayName": "banner"
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "button": {
+      "type": "string"
+    },
+    "circle": {
+      "displayName": "circle_tab",
+      "type": "component",
+      "repeatable": true,
+      "component": "home.circle-tab"
+    }
+  }
+}

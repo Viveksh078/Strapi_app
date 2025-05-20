@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Home": {
+      "type": "dynamiczone",
+      "components": [
+        "home.banner",
+        "home.business",
+        "home.sustainability"
+      ]
+    }
+  }
+}

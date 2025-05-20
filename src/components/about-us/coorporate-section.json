@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_about_us_coorporate_sections",
+  "info": {
+    "displayName": "coorporate_section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "coorporate_list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us.coorporate-list"
+    }
+  }
+}

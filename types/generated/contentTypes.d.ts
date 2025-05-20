@@ -526,6 +526,37 @@ export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
+  collectionName: 'home_pages';
+  info: {
+    description: '';
+    displayName: 'home';
+    pluralName: 'home-pages';
+    singularName: 'home-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Home: Schema.Attribute.DynamicZone<
+      ['home.banner', 'home.business', 'home.sustainability']
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-page.home-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMajorProjectMajorProject
   extends Struct.CollectionTypeSchema {
   collectionName: 'major_projects';
@@ -1140,6 +1171,7 @@ declare module '@strapi/strapi' {
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
+      'api::home-page.home-page': ApiHomePageHomePage;
       'api::major-project.major-project': ApiMajorProjectMajorProject;
       'api::our-business-page.our-business-page': ApiOurBusinessPageOurBusinessPage;
       'api::presence.presence': ApiPresencePresence;

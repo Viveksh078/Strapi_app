@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_home_read_urls",
+  "info": {
+    "displayName": "read_url"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

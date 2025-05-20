@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_home_sustainabilities",
+  "info": {
+    "displayName": "sustainability"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "Read_url": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home.read-url"
+    }
+  }
+}
