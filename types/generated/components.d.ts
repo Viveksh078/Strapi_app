@@ -278,6 +278,7 @@ export interface GroupCompaniesGroupCompanies extends Struct.ComponentSchema {
 export interface HomeBanner extends Struct.ComponentSchema {
   collectionName: 'components_home_banners';
   info: {
+    description: '';
     displayName: 'banner';
   };
   attributes: {
@@ -285,6 +286,7 @@ export interface HomeBanner extends Struct.ComponentSchema {
     circle: Schema.Attribute.Component<'home.circle-tab', true>;
     description: Schema.Attribute.Text;
     header: Schema.Attribute.String;
+    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -339,14 +341,16 @@ export interface HomeReadUrl extends Struct.ComponentSchema {
 export interface HomeSustainability extends Struct.ComponentSchema {
   collectionName: 'components_home_sustainabilities';
   info: {
+    description: '';
     displayName: 'sustainability';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    description_left: Schema.Attribute.Text;
     heading: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    Read_url: Schema.Attribute.Component<'home.read-url', false>;
-    title: Schema.Attribute.String;
+    title_description: Schema.Attribute.Text;
+    title_left: Schema.Attribute.String;
+    title_right: Schema.Attribute.String;
   };
 }
 

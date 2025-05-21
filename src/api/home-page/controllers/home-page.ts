@@ -12,9 +12,12 @@ export default factories.createCoreController('api::home-page.home-page' , ({ st
           Home: {
             on: {
               'home.banner': {
-                populate:{
-                    circle: '*'
-                },
+                populate: {
+                    video: true, // populate video media field
+                    circle: {
+                      populate: ['icon'], // populate icon inside each circle
+                    },
+                  },
               },
               'home.business': {
                 populate: {
