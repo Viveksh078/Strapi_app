@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_carousels",
+  "info": {
+    "singularName": "home-carousel",
+    "pluralName": "home-carousels",
+    "displayName": "home_carousel"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "home_carousel": {
+      "type": "dynamiczone",
+      "components": [
+        "home-carousel.about-us",
+        "home-carousel.sectors",
+        "home-carousel.clients"
+      ]
+    }
+  }
+}

@@ -275,6 +275,67 @@ export interface GroupCompaniesGroupCompanies extends Struct.ComponentSchema {
   };
 }
 
+export interface HomeCarouselAboutUs extends Struct.ComponentSchema {
+  collectionName: 'components_home_carousel_about_uses';
+  info: {
+    displayName: 'about_us';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    sub_title: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomeCarouselClients extends Struct.ComponentSchema {
+  collectionName: 'components_home_carousel_clients';
+  info: {
+    displayName: 'clients';
+  };
+  attributes: {
+    clients_data: Schema.Attribute.Component<
+      'home-carousel.clients-data',
+      true
+    >;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface HomeCarouselClientsData extends Struct.ComponentSchema {
+  collectionName: 'components_home_carousel_clients_data';
+  info: {
+    displayName: 'clients_data';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface HomeCarouselSectorData extends Struct.ComponentSchema {
+  collectionName: 'components_home_carousel_sector_data';
+  info: {
+    displayName: 'sector_data';
+  };
+  attributes: {
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HomeCarouselSectors extends Struct.ComponentSchema {
+  collectionName: 'components_home_carousel_sectors';
+  info: {
+    displayName: 'sectors';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    sector_data: Schema.Attribute.Component<'home-carousel.sector-data', true>;
+  };
+}
+
 export interface HomeBanner extends Struct.ComponentSchema {
   collectionName: 'components_home_banners';
   info: {
@@ -426,6 +487,11 @@ declare module '@strapi/strapi' {
       'footer.social-links': FooterSocialLinks;
       'footer.social-network': FooterSocialNetwork;
       'group-companies.group-companies': GroupCompaniesGroupCompanies;
+      'home-carousel.about-us': HomeCarouselAboutUs;
+      'home-carousel.clients': HomeCarouselClients;
+      'home-carousel.clients-data': HomeCarouselClientsData;
+      'home-carousel.sector-data': HomeCarouselSectorData;
+      'home-carousel.sectors': HomeCarouselSectors;
       'home.banner': HomeBanner;
       'home.business': HomeBusiness;
       'home.card-tab': HomeCardTab;

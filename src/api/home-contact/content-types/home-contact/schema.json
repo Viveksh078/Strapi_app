@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_contacts",
+  "info": {
+    "singularName": "home-contact",
+    "pluralName": "home-contacts",
+    "displayName": "home_contact"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone_no": {
+      "type": "biginteger"
+    },
+    "message": {
+      "type": "text"
+    }
+  }
+}

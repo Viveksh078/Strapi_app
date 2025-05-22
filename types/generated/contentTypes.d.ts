@@ -526,6 +526,72 @@ export interface ApiHeaderHeader extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiHomeCarouselHomeCarousel extends Struct.SingleTypeSchema {
+  collectionName: 'home_carousels';
+  info: {
+    displayName: 'home_carousel';
+    pluralName: 'home-carousels';
+    singularName: 'home-carousel';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    home_carousel: Schema.Attribute.DynamicZone<
+      [
+        'home-carousel.about-us',
+        'home-carousel.sectors',
+        'home-carousel.clients',
+      ]
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-carousel.home-carousel'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomeContactHomeContact extends Struct.CollectionTypeSchema {
+  collectionName: 'home_contacts';
+  info: {
+    displayName: 'home_contact';
+    pluralName: 'home-contacts';
+    singularName: 'home-contact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-contact.home-contact'
+    > &
+      Schema.Attribute.Private;
+    message: Schema.Attribute.Text;
+    name: Schema.Attribute.String;
+    phone_no: Schema.Attribute.BigInteger;
+    publishedAt: Schema.Attribute.DateTime;
+    subject: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home_pages';
   info: {
@@ -1171,6 +1237,8 @@ declare module '@strapi/strapi' {
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
+      'api::home-carousel.home-carousel': ApiHomeCarouselHomeCarousel;
+      'api::home-contact.home-contact': ApiHomeContactHomeContact;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::major-project.major-project': ApiMajorProjectMajorProject;
       'api::our-business-page.our-business-page': ApiOurBusinessPageOurBusinessPage;

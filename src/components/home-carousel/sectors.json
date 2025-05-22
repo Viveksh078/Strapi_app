@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_home_carousel_sectors",
+  "info": {
+    "displayName": "sectors"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "sector_data": {
+      "displayName": "sector_data",
+      "type": "component",
+      "repeatable": true,
+      "component": "home-carousel.sector-data"
+    }
+  }
+}
