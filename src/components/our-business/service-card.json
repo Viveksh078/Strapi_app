@@ -1,12 +1,19 @@
 {
   "collectionName": "components_our_business_service_cards",
   "info": {
-    "displayName": "service_card"
+    "displayName": "projects",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "title": {
+    "heading": {
       "type": "string"
+    },
+    "project_card": {
+      "displayName": "project_card",
+      "type": "component",
+      "repeatable": true,
+      "component": "our-business.project-card"
     }
   }
 }

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_our_business_page_groups",
+  "info": {
+    "displayName": "page_group"
+  },
+  "options": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "repeatable": false,
+      "component": "our-business.business-post"
+    },
+    "capabilities": {
+      "type": "component",
+      "repeatable": false,
+      "component": "our-business.services"
+    },
+    "projects": {
+      "type": "component",
+      "repeatable": false,
+      "component": "our-business.service-card"
+    },
+    "certificate": {
+      "type": "component",
+      "repeatable": false,
+      "component": "our-business.certificate"
+    }
+  }
+}

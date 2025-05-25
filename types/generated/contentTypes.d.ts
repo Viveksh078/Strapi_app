@@ -430,6 +430,35 @@ export interface ApiBusinessPostBusinessPost
   };
 }
 
+export interface ApiBusinessBusiness extends Struct.CollectionTypeSchema {
+  collectionName: 'businesses';
+  info: {
+    description: '';
+    displayName: 'business';
+    pluralName: 'businesses';
+    singularName: 'business';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    business_pages: Schema.Attribute.DynamicZone<['our-business.page-group']>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::business.business'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
   collectionName: 'contact_uses';
   info: {
@@ -657,6 +686,7 @@ export interface ApiOurBusinessPageOurBusinessPage
   extends Struct.SingleTypeSchema {
   collectionName: 'our_business_pages';
   info: {
+    description: '';
     displayName: 'our_business_page';
     pluralName: 'our-business-pages';
     singularName: 'our-business-page';
@@ -676,9 +706,10 @@ export interface ApiOurBusinessPageOurBusinessPage
       Schema.Attribute.Private;
     our_business: Schema.Attribute.DynamicZone<
       [
+        'our-business.business-post',
         'our-business.services',
         'our-business.service-card',
-        'our-business.business-post',
+        'our-business.certificate',
       ]
     >;
     publishedAt: Schema.Attribute.DateTime;
@@ -1234,6 +1265,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::business-post.business-post': ApiBusinessPostBusinessPost;
+      'api::business.business': ApiBusinessBusiness;
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;

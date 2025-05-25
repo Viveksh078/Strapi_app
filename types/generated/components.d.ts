@@ -292,6 +292,7 @@ export interface HomeCarouselAboutUs extends Struct.ComponentSchema {
 export interface HomeCarouselClients extends Struct.ComponentSchema {
   collectionName: 'components_home_carousel_clients';
   info: {
+    description: '';
     displayName: 'clients';
   };
   attributes: {
@@ -300,6 +301,8 @@ export interface HomeCarouselClients extends Struct.ComponentSchema {
       true
     >;
     heading: Schema.Attribute.String;
+    heading_client: Schema.Attribute.String;
+    sub_heading_client: Schema.Attribute.String;
   };
 }
 
@@ -328,11 +331,14 @@ export interface HomeCarouselSectorData extends Struct.ComponentSchema {
 export interface HomeCarouselSectors extends Struct.ComponentSchema {
   collectionName: 'components_home_carousel_sectors';
   info: {
+    description: '';
     displayName: 'sectors';
   };
   attributes: {
     heading: Schema.Attribute.String;
+    heading_about: Schema.Attribute.String;
     sector_data: Schema.Attribute.Component<'home-carousel.sector-data', true>;
+    sub_heading_about: Schema.Attribute.String;
   };
 }
 
@@ -415,39 +421,100 @@ export interface HomeSustainability extends Struct.ComponentSchema {
   };
 }
 
+export interface OurBusinessBannerBusiness extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_banner_businesses';
+  info: {
+    displayName: 'banner_business';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface OurBusinessBusinessPost extends Struct.ComponentSchema {
   collectionName: 'components_our_business_business_posts';
   info: {
-    displayName: 'business_post';
+    description: '';
+    displayName: 'banner';
+  };
+  attributes: {
+    banner_business: Schema.Attribute.Component<
+      'our-business.banner-business',
+      true
+    >;
+  };
+}
+
+export interface OurBusinessCardComponent extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_card_components';
+  info: {
+    displayName: 'card_component';
   };
   attributes: {
     description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface OurBusinessCertificate extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_certificates';
+  info: {
+    displayName: 'certificate';
+  };
+  attributes: {
+    card_data: Schema.Attribute.Component<'our-business.card-component', true>;
     heading: Schema.Attribute.String;
-    images: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+  };
+}
+
+export interface OurBusinessPageGroup extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_page_groups';
+  info: {
+    displayName: 'page_group';
+  };
+  attributes: {
+    banner: Schema.Attribute.Component<'our-business.business-post', false>;
+    capabilities: Schema.Attribute.Component<'our-business.services', false>;
+    certificate: Schema.Attribute.Component<'our-business.certificate', false>;
+    projects: Schema.Attribute.Component<'our-business.service-card', false>;
+  };
+}
+
+export interface OurBusinessProjectCard extends Struct.ComponentSchema {
+  collectionName: 'components_our_business_project_cards';
+  info: {
+    displayName: 'project_card';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
   };
 }
 
 export interface OurBusinessServiceCard extends Struct.ComponentSchema {
   collectionName: 'components_our_business_service_cards';
   info: {
-    displayName: 'service_card';
+    description: '';
+    displayName: 'projects';
   };
   attributes: {
-    title: Schema.Attribute.String;
+    heading: Schema.Attribute.String;
+    project_card: Schema.Attribute.Component<'our-business.project-card', true>;
   };
 }
 
 export interface OurBusinessServices extends Struct.ComponentSchema {
   collectionName: 'components_our_business_services';
   info: {
-    displayName: 'services';
+    description: '';
+    displayName: 'capabilities';
     icon: 'bulletList';
   };
   attributes: {
-    service_card: Schema.Attribute.Component<'our-business.service-card', true>;
+    description: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
@@ -498,7 +565,12 @@ declare module '@strapi/strapi' {
       'home.circle-tab': HomeCircleTab;
       'home.read-url': HomeReadUrl;
       'home.sustainability': HomeSustainability;
+      'our-business.banner-business': OurBusinessBannerBusiness;
       'our-business.business-post': OurBusinessBusinessPost;
+      'our-business.card-component': OurBusinessCardComponent;
+      'our-business.certificate': OurBusinessCertificate;
+      'our-business.page-group': OurBusinessPageGroup;
+      'our-business.project-card': OurBusinessProjectCard;
       'our-business.service-card': OurBusinessServiceCard;
       'our-business.services': OurBusinessServices;
       'sub-menu.sub-menu': SubMenuSubMenu;

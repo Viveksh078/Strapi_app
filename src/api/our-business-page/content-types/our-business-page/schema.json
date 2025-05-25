@@ -4,7 +4,8 @@
   "info": {
     "singularName": "our-business-page",
     "pluralName": "our-business-pages",
-    "displayName": "our_business_page"
+    "displayName": "our_business_page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,9 +14,10 @@
     "our_business": {
       "type": "dynamiczone",
       "components": [
+        "our-business.business-post",
         "our-business.services",
         "our-business.service-card",
-        "our-business.business-post"
+        "our-business.certificate"
       ]
     }
   }

@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "businesses",
+  "info": {
+    "singularName": "business",
+    "pluralName": "businesses",
+    "displayName": "business",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "business_pages": {
+      "type": "dynamiczone",
+      "components": [
+        "our-business.page-group"
+      ]
+    }
+  }
+}

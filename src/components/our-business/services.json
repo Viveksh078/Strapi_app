@@ -1,19 +1,17 @@
 {
   "collectionName": "components_our_business_services",
   "info": {
-    "displayName": "services",
-    "icon": "bulletList"
+    "displayName": "capabilities",
+    "icon": "bulletList",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
     },
-    "service_card": {
-      "displayName": "service_card",
-      "type": "component",
-      "repeatable": true,
-      "component": "our-business.service-card"
+    "description": {
+      "type": "text"
     }
   }
 }

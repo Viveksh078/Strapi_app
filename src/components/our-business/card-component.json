@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_our_business_card_components",
+  "info": {
+    "displayName": "card_component"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}
