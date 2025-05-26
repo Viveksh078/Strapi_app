@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_about_us_headquarters",
+  "info": {
+    "displayName": "headquarter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "normal_card": {
+      "displayName": "normal_card",
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us.normal-card"
+    },
+    "bullet_card": {
+      "displayName": "bullet_card",
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us.bullet-card"
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

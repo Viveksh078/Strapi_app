@@ -14,8 +14,8 @@
     "about_us_content": {
       "type": "dynamiczone",
       "components": [
-        "about-us.message",
-        "about-us.coorporate-philosophy"
+        "about-us.coorporate-philosophy",
+        "about-us.glance"
       ]
     }
   }

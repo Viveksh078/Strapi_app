@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_about_us_business_values",
+  "info": {
+    "displayName": "business_values"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

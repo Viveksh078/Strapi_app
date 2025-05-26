@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_about_us_normal_cards",
+  "info": {
+    "displayName": "normal_card"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

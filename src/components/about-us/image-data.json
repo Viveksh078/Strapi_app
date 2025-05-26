@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_about_us_image_data",
+  "info": {
+    "displayName": "image_data"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

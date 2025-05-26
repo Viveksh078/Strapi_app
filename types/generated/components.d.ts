@@ -30,6 +30,63 @@ export interface AboutUsAwardsList extends Struct.ComponentSchema {
   };
 }
 
+export interface AboutUsBulletCard extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_bullet_cards';
+  info: {
+    displayName: 'bullet_card';
+  };
+  attributes: {
+    bullet_values: Schema.Attribute.Component<'about-us.bullet-values', true>;
+    heading: Schema.Attribute.String;
+  };
+}
+
+export interface AboutUsBulletValues extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_bullet_values';
+  info: {
+    displayName: 'bullet_values';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface AboutUsBusiness extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_businesses';
+  info: {
+    displayName: 'business';
+  };
+  attributes: {
+    business_values: Schema.Attribute.Component<
+      'about-us.business-values',
+      true
+    >;
+    heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
+export interface AboutUsBusinessValues extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_business_values';
+  info: {
+    displayName: 'business_values';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface AboutUsCertificates extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_certificates';
+  info: {
+    displayName: 'certificates';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
+    image_data: Schema.Attribute.Component<'about-us.image-data', true>;
+  };
+}
+
 export interface AboutUsCoorporateList extends Struct.ComponentSchema {
   collectionName: 'components_about_us_coorporate_lists';
   info: {
@@ -71,6 +128,33 @@ export interface AboutUsCoorporateSection extends Struct.ComponentSchema {
   };
 }
 
+export interface AboutUsGlance extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_glances';
+  info: {
+    description: '';
+    displayName: 'glance';
+  };
+  attributes: {
+    business: Schema.Attribute.Component<'about-us.business', false>;
+    certificates: Schema.Attribute.Component<'about-us.certificates', false>;
+    heading: Schema.Attribute.String;
+    headquarters: Schema.Attribute.Component<'about-us.headquarter', false>;
+  };
+}
+
+export interface AboutUsHeadquarter extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_headquarters';
+  info: {
+    description: '';
+    displayName: 'headquarter';
+  };
+  attributes: {
+    bullet_card: Schema.Attribute.Component<'about-us.bullet-card', true>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    normal_card: Schema.Attribute.Component<'about-us.normal-card', true>;
+  };
+}
+
 export interface AboutUsHistory extends Struct.ComponentSchema {
   collectionName: 'components_about_us_histories';
   info: {
@@ -84,6 +168,16 @@ export interface AboutUsHistory extends Struct.ComponentSchema {
   };
 }
 
+export interface AboutUsImageData extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_image_data';
+  info: {
+    displayName: 'image_data';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface AboutUsMessage extends Struct.ComponentSchema {
   collectionName: 'components_about_us_messages';
   info: {
@@ -94,6 +188,17 @@ export interface AboutUsMessage extends Struct.ComponentSchema {
     heading: Schema.Attribute.String;
     images: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     sub_title: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface AboutUsNormalCard extends Struct.ComponentSchema {
+  collectionName: 'components_about_us_normal_cards';
+  info: {
+    displayName: 'normal_card';
+  };
+  attributes: {
+    heading: Schema.Attribute.String;
     title: Schema.Attribute.String;
   };
 }
@@ -228,6 +333,7 @@ export interface FooterHeadquarter extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.Text;
     heading: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     title: Schema.Attribute.String;
   };
 }
@@ -535,11 +641,20 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'about-us.awards': AboutUsAwards;
       'about-us.awards-list': AboutUsAwardsList;
+      'about-us.bullet-card': AboutUsBulletCard;
+      'about-us.bullet-values': AboutUsBulletValues;
+      'about-us.business': AboutUsBusiness;
+      'about-us.business-values': AboutUsBusinessValues;
+      'about-us.certificates': AboutUsCertificates;
       'about-us.coorporate-list': AboutUsCoorporateList;
       'about-us.coorporate-philosophy': AboutUsCoorporatePhilosophy;
       'about-us.coorporate-section': AboutUsCoorporateSection;
+      'about-us.glance': AboutUsGlance;
+      'about-us.headquarter': AboutUsHeadquarter;
       'about-us.history': AboutUsHistory;
+      'about-us.image-data': AboutUsImageData;
       'about-us.message': AboutUsMessage;
+      'about-us.normal-card': AboutUsNormalCard;
       'companies.companies': CompaniesCompanies;
       'contact.contact': ContactContact;
       'contact.contact-details': ContactContactDetails;

@@ -11,7 +11,9 @@ export default factories.createCoreController('api::footer.footer', ({ strapi })
           footer: {
             on: {
               'footer.headquarter': {
-                populate: '*',
+                populate: {
+                  image:'*'
+                },
               },
               'footer.contact': {
                 populate: '*',

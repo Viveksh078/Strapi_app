@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_about_us_certificates",
+  "info": {
+    "displayName": "certificates"
+  },
+  "options": {},
+  "attributes": {
+    "image_data": {
+      "displayName": "image_data",
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us.image-data"
+    },
+    "heading": {
+      "type": "string"
+    }
+  }
+}

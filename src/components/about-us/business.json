@@ -1,19 +1,12 @@
 {
-  "collectionName": "components_footer_headquarters",
+  "collectionName": "components_about_us_businesses",
   "info": {
-    "displayName": "headquarter",
-    "description": ""
+    "displayName": "business"
   },
   "options": {},
   "attributes": {
     "heading": {
       "type": "string"
-    },
-    "title": {
-      "type": "string"
-    },
-    "description": {
-      "type": "text"
     },
     "image": {
       "allowedTypes": [
@@ -24,6 +17,12 @@
       ],
       "type": "media",
       "multiple": false
+    },
+    "business_values": {
+      "displayName": "business_values",
+      "type": "component",
+      "repeatable": true,
+      "component": "about-us.business-values"
     }
   }
 }

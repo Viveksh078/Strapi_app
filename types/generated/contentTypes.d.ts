@@ -382,7 +382,7 @@ export interface ApiAboutUsPageAboutUsPage extends Struct.SingleTypeSchema {
   };
   attributes: {
     about_us_content: Schema.Attribute.DynamicZone<
-      ['about-us.message', 'about-us.coorporate-philosophy']
+      ['about-us.coorporate-philosophy', 'about-us.glance']
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

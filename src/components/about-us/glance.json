@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_about_us_glances",
+  "info": {
+    "displayName": "glance",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "headquarters": {
+      "displayName": "headquarter",
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us.headquarter"
+    },
+    "business": {
+      "displayName": "business",
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us.business"
+    },
+    "certificates": {
+      "displayName": "certificates",
+      "type": "component",
+      "repeatable": false,
+      "component": "about-us.certificates"
+    },
+    "heading": {
+      "type": "string"
+    }
+  }
+}

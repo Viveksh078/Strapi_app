@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_about_us_bullet_values",
+  "info": {
+    "displayName": "bullet_values"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}
