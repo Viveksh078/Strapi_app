@@ -459,6 +459,34 @@ export interface ApiBusinessBusiness extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiContactCardContactCard extends Struct.SingleTypeSchema {
+  collectionName: 'contact_cards';
+  info: {
+    displayName: 'contact_card';
+    pluralName: 'contact-cards';
+    singularName: 'contact-card';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contact_card: Schema.Attribute.DynamicZone<['contact.contact']>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-card.contact-card'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContactUsContactUs extends Struct.SingleTypeSchema {
   collectionName: 'contact_uses';
   info: {
@@ -679,43 +707,6 @@ export interface ApiMajorProjectMajorProject
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     url: Schema.Attribute.String;
-  };
-}
-
-export interface ApiOurBusinessPageOurBusinessPage
-  extends Struct.SingleTypeSchema {
-  collectionName: 'our_business_pages';
-  info: {
-    description: '';
-    displayName: 'our_business_page';
-    pluralName: 'our-business-pages';
-    singularName: 'our-business-page';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::our-business-page.our-business-page'
-    > &
-      Schema.Attribute.Private;
-    our_business: Schema.Attribute.DynamicZone<
-      [
-        'our-business.business-post',
-        'our-business.services',
-        'our-business.service-card',
-        'our-business.certificate',
-      ]
-    >;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
   };
 }
 
@@ -1266,6 +1257,7 @@ declare module '@strapi/strapi' {
       'api::about-us-page.about-us-page': ApiAboutUsPageAboutUsPage;
       'api::business-post.business-post': ApiBusinessPostBusinessPost;
       'api::business.business': ApiBusinessBusiness;
+      'api::contact-card.contact-card': ApiContactCardContactCard;
       'api::contact-us.contact-us': ApiContactUsContactUs;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
@@ -1273,7 +1265,6 @@ declare module '@strapi/strapi' {
       'api::home-contact.home-contact': ApiHomeContactHomeContact;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::major-project.major-project': ApiMajorProjectMajorProject;
-      'api::our-business-page.our-business-page': ApiOurBusinessPageOurBusinessPage;
       'api::presence.presence': ApiPresencePresence;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

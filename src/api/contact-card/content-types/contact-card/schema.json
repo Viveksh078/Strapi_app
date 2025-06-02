@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_cards",
+  "info": {
+    "singularName": "contact-card",
+    "pluralName": "contact-cards",
+    "displayName": "contact_card"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "contact_card": {
+      "type": "dynamiczone",
+      "components": [
+        "contact.contact"
+      ]
+    }
+  }
+}

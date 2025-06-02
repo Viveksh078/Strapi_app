@@ -217,13 +217,11 @@ export interface CompaniesCompanies extends Struct.ComponentSchema {
 export interface ContactContact extends Struct.ComponentSchema {
   collectionName: 'components_contact_contacts';
   info: {
+    description: '';
     displayName: 'contact';
   };
   attributes: {
-    contact_details: Schema.Attribute.Component<
-      'contact.contact-details',
-      true
-    >;
+    contact_us: Schema.Attribute.Component<'contact.contact-us-cards', true>;
     heading: Schema.Attribute.String;
   };
 }
@@ -255,6 +253,17 @@ export interface ContactContactUs extends Struct.ComponentSchema {
     name: Schema.Attribute.String;
     phone_no: Schema.Attribute.BigInteger;
     subject: Schema.Attribute.String;
+  };
+}
+
+export interface ContactContactUsCards extends Struct.ComponentSchema {
+  collectionName: 'components_contact_contact_us_cards';
+  info: {
+    displayName: 'contact_us_cards';
+  };
+  attributes: {
+    contact_card: Schema.Attribute.Component<'contact.contact-details', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -659,6 +668,7 @@ declare module '@strapi/strapi' {
       'contact.contact': ContactContact;
       'contact.contact-details': ContactContactDetails;
       'contact.contact-us': ContactContactUs;
+      'contact.contact-us-cards': ContactContactUsCards;
       'data-business.data': DataBusinessData;
       'data-presence.data-presence': DataPresenceDataPresence;
       'data-project.data': DataProjectData;

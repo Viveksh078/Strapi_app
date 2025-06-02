@@ -1,18 +1,19 @@
 {
   "collectionName": "components_contact_contacts",
   "info": {
-    "displayName": "contact"
+    "displayName": "contact",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "heading": {
       "type": "string"
     },
-    "contact_details": {
-      "displayName": "contact_details",
+    "contact_us": {
+      "displayName": "contact_us_cards",
       "type": "component",
       "repeatable": true,
-      "component": "contact.contact-details"
+      "component": "contact.contact-us-cards"
     }
   }
 }
