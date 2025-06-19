@@ -1,17 +1,25 @@
 FROM node:18
 
-# System dependencies for better-sqlite3
+# 1️⃣ Install system dependencies for better-sqlite3
 RUN apt-get update && apt-get install -y python3 make g++ && apt-get clean
 
+# 2️⃣ Set working directory
 WORKDIR /app
 
+# 3️⃣ Copy only dependency files first (for caching)
 COPY package*.json ./
 
-# Ensure better-sqlite3 gets built properly
+# 4️⃣ Install node packages (including better-sqlite3)
 RUN npm install --legacy-peer-deps
 
+# 5️⃣ Copy rest of the project files
 COPY . .
 
-CMD ["npx", "strapi", "start"]
+# 6️⃣ Build the Strapi project for production
+RUN npm run build
+
+# 7️⃣ Start the app (production mode)
+CMD ["npm", "start"]
+
 
 
