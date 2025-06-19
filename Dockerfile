@@ -1,25 +1,26 @@
-FROM node:18
-
-# 1️⃣ Install system dependencies for better-sqlite3
-RUN apt-get update && apt-get install -y python3 make g++ && apt-get clean
-
-# 2️⃣ Set working directory
+# Use an official Node.js runtime as the base image
+FROM node:18-alpine
+ 
+# Set working directory inside the container
 WORKDIR /app
-
-# 3️⃣ Copy only dependency files first (for caching)
-COPY package*.json ./
-
-# 4️⃣ Install node packages (including better-sqlite3)
-RUN npm install --legacy-peer-deps
-
-# 5️⃣ Copy rest of the project files
+ 
+# Copy package.json and package-lock.json first to leverage Docker caching
+COPY package.json package-lock.json ./
+ 
+# Install all dependencies (including dev dependencies)
+RUN npm install
+ 
+# Install nodemon globally for hot reloading
+RUN npm install -g nodemon
+ 
+# Copy the rest of the application files
 COPY . .
-
-# 6️⃣ Build the Strapi project for production
+ 
+# Build the Strapi application
 RUN npm run build
-
-# 7️⃣ Start the app (production mode)
-CMD ["npm", "start"]
-
-
-
+ 
+# Expose Strapi's default port
+EXPOSE 1337
+ 
+# Start Strapi in development mode with nodemon
+CMD ["npm", "run", "develop"]
