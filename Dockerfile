@@ -1,25 +1,21 @@
-# Use official Node.js image
 FROM node:18
 
-# Set working directory
+# System dependencies needed to build better-sqlite3
+RUN apt-get update && apt-get install -y python3 make g++ && apt-get clean
+
+# Create app directory
 WORKDIR /app
 
-# Install build tools required for native modules like better-sqlite3
-RUN apt-get update && apt-get install -y \
-    python3 make g++ \
-    && rm -rf /var/lib/apt/lists/*
-
-# Copy package.json and install dependencies
+# Install app dependencies first
 COPY package*.json ./
+RUN npm install --legacy-peer-deps
 
-RUN npm install
-
-# Copy rest of the code
+# Bundle app source
 COPY . .
 
-# Expose the Strapi port
+# Expose app port
 EXPOSE 1337
 
-# Start the application
+# Start Strapi
 CMD ["npm", "run", "develop"]
 
