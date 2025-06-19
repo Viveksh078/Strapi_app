@@ -1,17 +1,16 @@
 FROM node:18
 
-# Install required system deps
+# System dependencies for better-sqlite3
 RUN apt-get update && apt-get install -y python3 make g++ && apt-get clean
 
 WORKDIR /app
 
 COPY package*.json ./
 
-# 🔧 Force native module install (important for better-sqlite3)
+# Ensure better-sqlite3 gets built properly
 RUN npm install --legacy-peer-deps
 
 COPY . .
 
-EXPOSE 1337
-
 CMD ["npm", "run", "develop"]
+
